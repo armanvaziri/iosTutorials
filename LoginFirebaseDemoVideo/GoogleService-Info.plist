@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>171573676963-sje5bc0h2h5akfquq4i1cbcdkaqrjptl.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.171573676963-sje5bc0h2h5akfquq4i1cbcdkaqrjptl</string>
+	<key>API_KEY</key>
+	<string>AIzaSyA4flTm7S8DcSwBzI9XC0idZXJMMCNrT8U</string>
+	<key>GCM_SENDER_ID</key>
+	<string>171573676963</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>ArmanVaziri.LoginFirebaseDemoVideo</string>
+	<key>PROJECT_ID</key>
+	<string>login-demo-65d52</string>
+	<key>STORAGE_BUCKET</key>
+	<string>login-demo-65d52.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:171573676963:ios:8a4166121b7abaa1af6816</string>
+	<key>DATABASE_URL</key>
+	<string>https://login-demo-65d52.firebaseio.com</string>
+</dict>
+</plist>

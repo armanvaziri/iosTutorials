@@ -1,0 +1,6 @@
+framework module Pods_LoginFirebaseDemoVideo {
+  umbrella header "Pods-LoginFirebaseDemoVideo-umbrella.h"
+
+  export *
+  module * { export * }
+}
