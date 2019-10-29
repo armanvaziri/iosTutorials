@@ -78,6 +78,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             // request location
             locationManager.requestWhenInUseAuthorization()
             break
+        @unknown default:
+            showAlert(title: "Location error", message: "please enable location services")
+            break
         }
     }
     
