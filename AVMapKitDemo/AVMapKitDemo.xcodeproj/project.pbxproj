@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A2A8AE532368024900EB14FD /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A8AE522368024900EB14FD /* CameraViewController.swift */; };
 		A2ADAF0D2367C06800A47187 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ADAF0C2367C06800A47187 /* AppDelegate.swift */; };
 		A2ADAF0F2367C06800A47187 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ADAF0E2367C06800A47187 /* SceneDelegate.swift */; };
 		A2ADAF112367C06900A47187 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ADAF102367C06900A47187 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A2A8AE522368024900EB14FD /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		A2ADAF092367C06800A47187 /* AVMapKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AVMapKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2ADAF0C2367C06800A47187 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2ADAF0E2367C06800A47187 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				A2ADAF0C2367C06800A47187 /* AppDelegate.swift */,
 				A2ADAF0E2367C06800A47187 /* SceneDelegate.swift */,
 				A2ADAF102367C06900A47187 /* ViewController.swift */,
+				A2A8AE522368024900EB14FD /* CameraViewController.swift */,
 				A2ADAF122367C06900A47187 /* Main.storyboard */,
 				A2ADAF152367C06B00A47187 /* Assets.xcassets */,
 				A2ADAF172367C06B00A47187 /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2ADAF112367C06900A47187 /* ViewController.swift in Sources */,
+				A2A8AE532368024900EB14FD /* CameraViewController.swift in Sources */,
 				A2ADAF0D2367C06800A47187 /* AppDelegate.swift in Sources */,
 				A2ADAF0F2367C06800A47187 /* SceneDelegate.swift in Sources */,
 			);

@@ -10,11 +10,12 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+class ViewController: UIViewController, CLLocationManagerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
 
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var cameraButton: UIButton!
+    var imageToPin: UIImage!
     
     let locationManager = CLLocationManager()
 
@@ -84,6 +85,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
+    // Segue to CameraViewController
+    @IBAction func toCameraSegue(_ sender: UIButton) {
+        performSegue(withIdentifier: "toCamera", sender: self)
+    }
+    
     // Function for showing alerts
     func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -103,6 +109,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         checkLocationAuthorization()
     }
-
+    
 }
 
