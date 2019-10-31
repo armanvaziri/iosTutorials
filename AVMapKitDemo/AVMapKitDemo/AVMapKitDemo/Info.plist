@@ -60,11 +60,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Enabling your location lets us help you :) </string>
-	<key>NSCameraUsageDescription</key>
-	<string>Enabling your camera lets us help you :)</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Enabling photo access lets us help you :)</string>
 </dict>
 </plist>
