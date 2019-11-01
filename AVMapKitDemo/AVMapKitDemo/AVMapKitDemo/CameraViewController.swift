@@ -7,16 +7,74 @@
 //
 
 import UIKit
+import AVFoundation
 
 class CameraViewController: UIViewController {
+    
+    public var imagePickerController: UIImagePickerController?
+    public var imageToPin: UIImage!
+    var captureSession: AVCaptureSession = AVCaptureSession()
+    var currentCamera: AVCaptureDevice?
+    var photoOutput: AVCapturePhotoOutput?
+    var cameraPreviewLayer: AVCaptureVideoPreviewLayer?
 
     @IBOutlet weak var cameraButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         cameraButton.layer.cornerRadius = cameraButton.frame.height / 2
+        setup()
     }
     
-
+    func setup() {
+        setupCaptureSession()
+        setupCaptureDevice()
+        setupInputOutput()
+        setupPreviewLayer()
+        startRunningCaptureSession()
+    }
+    
+    func setupCaptureSession() {
+        captureSession.sessionPreset = AVCaptureSession.Preset.photo
+    }
+    
+    func setupCaptureDevice() {
+        let deviceDiscovery = AVCaptureDevice.DiscoverySession(deviceTypes: [AVCaptureDevice.DeviceType.builtInWideAngleCamera], mediaType: AVMediaType.video, position: AVCaptureDevice.Position.back)
+        let devices = deviceDiscovery.devices
+        for device in devices {
+            if device.position == AVCaptureDevice.Position.back {
+                currentCamera = device
+            }
+        }
+        
+    }
+    
+    func setupInputOutput() {
+        do {
+            let captureDeviceInput = try AVCaptureDeviceInput(device: currentCamera!)
+            captureSession.addInput(captureDeviceInput)
+            photoOutput?.setPreparedPhotoSettingsArray([AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])] , completionHandler: nil)
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func setupPreviewLayer() {
+        cameraPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+        cameraPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        cameraPreviewLayer?.connection?.videoOrientation = AVCaptureVideoOrientation.portrait
+        cameraPreviewLayer!.frame = self.view.frame
+        self.view.layer.insertSublayer(cameraPreviewLayer!, at: 0)
+        
+    }
+    
+    func startRunningCaptureSession() {
+        captureSession.startRunning()
+    }
+    
+    func presentImagePicker(controller: UIImagePickerController, source: UIImagePickerController.SourceType) {
+        
+    }
+    
     
 }
