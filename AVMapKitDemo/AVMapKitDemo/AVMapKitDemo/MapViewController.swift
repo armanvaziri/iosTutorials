@@ -12,19 +12,25 @@ import MapKit
 class MapViewController: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var cameraButton: UIButton!
     
     var locationManager: CLLocationManager!
     var userLocation: CLLocation!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        cameraButton.layer.cornerRadius = cameraButton.frame.height/2
         mapView.delegate = self
         checkLocationAuthorization()
-        
         // test to place pin
         let campanile = CLLocationCoordinate2D(latitude: 37.872087, longitude: -122.257752)
         placePins(place: campanile, image: nil)
     }
+    
+    @IBAction func cameraButtonPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "camera", sender: sender)
+    }
+    
     
     // checks whether the user has authorized location services
     func checkLocationAuthorization() {
@@ -54,7 +60,7 @@ class MapViewController: UIViewController {
         annotation.subtitle = ""
         mapView.addAnnotation(annotation)
     }
-
+    
 }
 
 extension MapViewController: CLLocationManagerDelegate {

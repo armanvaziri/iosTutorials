@@ -13,6 +13,7 @@
 		A2E60E2B236ADDDC009EF58D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2E60E2A236ADDDC009EF58D /* Assets.xcassets */; };
 		A2E60E2E236ADDDC009EF58D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2E60E2C236ADDDC009EF58D /* LaunchScreen.storyboard */; };
 		A2E60E36236ADEF8009EF58D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E60E35236ADEF8009EF58D /* MapViewController.swift */; };
+		A2EBB65D236BC1A0004B6304 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EBB65C236BC1A0004B6304 /* CameraViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		A2E60E2D236ADDDC009EF58D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A2E60E2F236ADDDC009EF58D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2E60E35236ADEF8009EF58D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		A2EBB65C236BC1A0004B6304 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				A2E60E21236ADDDA009EF58D /* AppDelegate.swift */,
 				A2E60E23236ADDDA009EF58D /* SceneDelegate.swift */,
 				A2E60E35236ADEF8009EF58D /* MapViewController.swift */,
+				A2EBB65C236BC1A0004B6304 /* CameraViewController.swift */,
 				A2E60E27236ADDDA009EF58D /* Main.storyboard */,
 				A2E60E2A236ADDDC009EF58D /* Assets.xcassets */,
 				A2E60E2C236ADDDC009EF58D /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2E60E22236ADDDA009EF58D /* AppDelegate.swift in Sources */,
+				A2EBB65D236BC1A0004B6304 /* CameraViewController.swift in Sources */,
 				A2E60E36236ADEF8009EF58D /* MapViewController.swift in Sources */,
 				A2E60E24236ADDDA009EF58D /* SceneDelegate.swift in Sources */,
 			);
