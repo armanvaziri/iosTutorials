@@ -65,6 +65,7 @@
                                 <state key="normal" image="camera.fill" catalog="system"/>
                                 <connections>
                                     <action selector="cameraButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K1h-82-9Kn"/>
+                                    <action selector="cameraButtonTapped:" destination="AbP-nb-Xx5" eventType="touchUpInside" id="FrZ-mq-Jfh"/>
                                 </connections>
                             </button>
                         </subviews>

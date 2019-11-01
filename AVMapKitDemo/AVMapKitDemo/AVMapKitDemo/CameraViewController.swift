@@ -53,7 +53,9 @@ class CameraViewController: UIViewController {
         do {
             let captureDeviceInput = try AVCaptureDeviceInput(device: currentCamera!)
             captureSession.addInput(captureDeviceInput)
+            photoOutput = AVCapturePhotoOutput()
             photoOutput?.setPreparedPhotoSettingsArray([AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])] , completionHandler: nil)
+            captureSession.addOutput(photoOutput!)
         } catch {
             print(error.localizedDescription)
         }
@@ -72,9 +74,22 @@ class CameraViewController: UIViewController {
         captureSession.startRunning()
     }
     
-    func presentImagePicker(controller: UIImagePickerController, source: UIImagePickerController.SourceType) {
+    
+    @IBAction func cameraButtonTapped(_ sender: UIButton) {
+        let settings = AVCapturePhotoSettings()
+        photoOutput?.capturePhoto(with: settings, delegate: self)
         
     }
     
+}
+
+extension CameraViewController: AVCapturePhotoCaptureDelegate {
+    
+    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
+        if let imageData = photo.fileDataRepresentation() {
+            imageToPin = UIImage(data: imageData)
+            performSegue(withIdentifier: <#T##String#>, sender: <#T##Any?#>)
+        }
+    }
     
 }

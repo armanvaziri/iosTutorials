@@ -62,5 +62,7 @@
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Please let us use your location </string>
+	<key>NSCameraUsageDescription</key>
+	<string>Please let us use your camera</string>
 </dict>
 </plist>

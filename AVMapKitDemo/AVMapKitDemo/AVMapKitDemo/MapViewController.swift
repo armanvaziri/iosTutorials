@@ -16,15 +16,18 @@ class MapViewController: UIViewController {
     
     var locationManager: CLLocationManager!
     var userLocation: CLLocation!
+    var imageToPin: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         cameraButton.layer.cornerRadius = cameraButton.frame.height/2
         mapView.delegate = self
         checkLocationAuthorization()
+        locationManager = CLLocationManager()
         // test to place pin
-        let campanile = CLLocationCoordinate2D(latitude: 37.872087, longitude: -122.257752)
-        placePins(place: campanile, image: nil)
+//        let campanile = CLLocationCoordinate2D(latitude: 37.872087, longitude: -122.257752)
+        let currLocation = locationManager.location?.coordinate
+        placePins(place: currLocation!, image: UIImage(named: "lighthouse"))
     }
     
     @IBAction func cameraButtonPressed(_ sender: UIButton) {
@@ -37,11 +40,13 @@ class MapViewController: UIViewController {
         if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
             // set map location on user's current location
             locationManager = CLLocationManager()
-            userLocation = locationManager.location
+            userLocation = locationManager.location!
             centerMapOnLocation(location: userLocation!)
             mapView.showsUserLocation = true
         } else {
+            locationManager = CLLocationManager()
             locationManager.requestWhenInUseAuthorization()
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
         }
     }
     
@@ -55,10 +60,14 @@ class MapViewController: UIViewController {
     // places pins on the specified coordinates
     func placePins(place: CLLocationCoordinate2D, image: UIImage?) {
         let annotation = MKPointAnnotation()
+        if image != nil {
+            imageToPin = image
+        }
         annotation.coordinate = place
-        annotation.title = "arman"
+        annotation.title = "pictureTaken"
         annotation.subtitle = ""
         mapView.addAnnotation(annotation)
+//        mapView.reloadInputViews()
     }
     
 }
@@ -76,6 +85,7 @@ extension MapViewController: CLLocationManagerDelegate {
         }
         userLocation = latestLocation
     }
+    
 }
 
 extension MapViewController: MKMapViewDelegate {
@@ -87,11 +97,16 @@ extension MapViewController: MKMapViewDelegate {
         if annotationView == nil {
             annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "AnnotationView")
         }
-        if let title = annotation.title, title == "arman" {
-            let imageToPin = resizeImage(image: UIImage(named: "lighthouse")!, size: CGSize(width: 60, height: 60))
-            annotationView?.image = imageToPin
+//        if let title = annotation.title, title == "pictureTaken" {
+//            let imageToPin = resizeImage(image: UIImage(named: "lighthouse")!, size: CGSize(width: 60, height: 60))
+//            annotationView?.image = imageToPin
+//        }
+        if let title = annotation.title, title == "pictureTaken" {
+            let annotationImage = resizeImage(image: imageToPin!, size: CGSize(width: 60, height: 60))
+            annotationView?.image = annotationImage
         }
         annotationView?.canShowCallout = true
+        
         return annotationView
     }
     
